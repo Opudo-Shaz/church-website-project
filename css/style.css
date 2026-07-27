@@ -49,7 +49,11 @@
     display:flex; align-items:center; justify-content:space-between;
     height:68px;
   }
-  .brand{font-family:'Fraunces',serif; font-weight:600; font-size:1.15rem; color:var(--ink); text-decoration:none;}
+  .brand{
+    font-family:'Fraunces',serif; font-weight:600; font-size:1.15rem; color:var(--ink);
+    text-decoration:none; display:flex; align-items:center; gap:10px;
+  }
+  .brand-logo{width:26px !important; height:26px !important; object-fit:contain !important; flex:none; border-radius:50%;}
   .navlinks{display:flex; gap:28px; list-style:none; margin:0; padding:0;}
   .navlinks a{text-decoration:none; font-size:0.92rem; font-weight:500; color:var(--slate); transition:color 0.2s;}
   .navlinks a:hover, .navlinks a:focus-visible{color:var(--wine);}
@@ -74,7 +78,9 @@
   /* ---------- HERO with arch motif ---------- */
   .hero{
     position:relative;
-    background:var(--ink);
+    background:
+      linear-gradient(180deg, rgba(30,42,71,0.88) 0%, rgba(30,42,71,0.96) 55%, var(--ink) 100%),
+      url('assets/images/hero-photo.jpeg') center 20% / cover no-repeat;
     color:var(--paper);
     overflow:hidden;
     padding:0;
@@ -161,14 +167,12 @@
   .about-photo{
     aspect-ratio:1/1;
     border-radius:8px;
-    background:linear-gradient(160deg,#E7DFC9,#C9A227 120%);
-    position:relative;
     overflow:hidden;
+    position:relative;
+    background:linear-gradient(160deg,#E7DFC9,#C9A227 120%);
   }
-  .about-photo span{
-    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-    color:var(--ink); font-family:'Fraunces',serif; font-size:0.95rem; text-align:center; padding:20px;
-    background:rgba(251,248,242,0.55);
+  .about-photo img{
+    width:100%; height:100%; object-fit:cover;
   }
   .about p{color:var(--slate); max-width:56ch;}
   @media (max-width:800px){
@@ -176,28 +180,52 @@
     .about-photo{order:-1; max-width:320px; margin:0 auto;}
   }
 
-  /* ---------- SERVICE TIMES (notice board) ---------- */
+  /* ---------- SERVICE TIMES (icon cards) ---------- */
   .board{
     background:var(--ink);
     color:var(--paper);
   }
   .board .section-head h2{color:var(--paper);}
   .times{
-    display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:1px;
-    background:rgba(251,248,242,0.16);
-    border:1px solid rgba(251,248,242,0.16);
-    border-radius:8px;
-    overflow:hidden;
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
   }
   .time-card{
-    background:#22304F;
-    padding:28px 24px;
+    background:#233457;
+    border:1px solid rgba(251,248,242,0.12);
+    border-radius:14px;
+    padding:26px 22px;
+    position:relative;
+    overflow:hidden;
+    transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   }
+  .time-card::before{
+    content:"";
+    position:absolute; top:0; left:0; right:0; height:4px;
+    background:var(--card-accent, var(--brass));
+  }
+  .time-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 16px 30px -18px rgba(0,0,0,0.55);
+    border-color:rgba(251,248,242,0.22);
+  }
+  .time-card.accent-brass{--card-accent:var(--brass);}
+  .time-card.accent-wine{--card-accent:#C97B6E;}
+  .time-card.accent-glow{--card-accent:#8FA8D9;}
+  .time-card.wide{grid-column:1 / -1; max-width:280px; margin:0 auto;}
+  .time-icon{
+    width:44px; height:44px;
+    border-radius:50%;
+    background:rgba(251,248,242,0.08);
+    color:var(--card-accent, var(--brass));
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:16px;
+  }
+  .time-icon svg{width:22px; height:22px;}
   .time-card .day{
-    font-family:'Fraunces',serif; font-size:1.2rem; margin-bottom:6px; color:var(--paper);
+    font-family:'Fraunces',serif; font-size:1.15rem; margin-bottom:6px; color:var(--paper);
   }
-  .time-card .when{color:var(--brass); font-weight:600; font-size:0.95rem;}
+  .time-card .when{color:var(--card-accent, var(--brass)); font-weight:600; font-size:0.95rem;}
   .time-card .what{color:rgba(251,248,242,0.7); font-size:0.9rem; margin-top:4px;}
 
   /* ---------- EVENTS (pinned cards) ---------- */
@@ -219,6 +247,45 @@
   }
   .event-card h3{font-size:1.15rem; margin-bottom:6px;}
   .event-card p{color:var(--slate); font-size:0.92rem; margin:0;}
+
+  /* ---------- OUR TEAM ---------- */
+  .team-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:32px;
+  }
+  .team-card{
+    text-align:center;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:28px 22px;
+  }
+  .team-photo{
+    width:110px; height:110px;
+    border-radius:50%;
+    overflow:hidden;
+    margin:0 auto 18px;
+    background:linear-gradient(160deg,#E7DFC9,#C9A227 120%);
+    border:3px solid var(--paper);
+    box-shadow:0 0 0 1px var(--line);
+  }
+  .team-photo img{width:100%; height:100%; object-fit:cover;}
+  .team-card h3{font-size:1.1rem; margin-bottom:2px;}
+  .team-role{
+    color:var(--wine); font-weight:600; font-size:0.82rem;
+    text-transform:uppercase; letter-spacing:0.06em; margin-bottom:12px;
+  }
+  .team-bio{color:var(--slate); font-size:0.9rem; margin-bottom:20px;}
+  .whatsapp-btn{
+    display:inline-flex; align-items:center; gap:8px;
+    background:#25D366; color:#fff;
+    padding:10px 20px; border-radius:999px;
+    text-decoration:none; font-weight:600; font-size:0.9rem;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .whatsapp-btn svg{width:18px; height:18px;}
+  .whatsapp-btn:hover{transform:translateY(-2px); box-shadow:0 10px 20px -12px rgba(37,211,102,0.6);}
+  .whatsapp-btn:focus-visible{outline:2px solid var(--ink); outline-offset:3px;}
 
   /* ---------- MINISTRIES ---------- */
   .ministries{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:32px;}
