@@ -1,4 +1,4 @@
-# [Church Name] — Website
+# Higher Life Church — Website
 
 A simple, dependency-free one-page website: plain HTML, CSS, and a small
 amount of JavaScript for the mobile menu and footer year. No build step,
