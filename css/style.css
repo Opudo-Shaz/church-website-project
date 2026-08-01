@@ -81,7 +81,7 @@
     background:
       linear-gradient(180deg, rgba(30,42,71,0.93) 0%, rgba(30,42,71,0.85) 45%, var(--ink) 100%),
       radial-gradient(120% 70% at 50% 0%, rgba(184,146,58,0.14), transparent 60%),
-      url('assets/images/hero-photo.jpeg') center 25% / cover no-repeat,
+      url('../assets/images/praisephoto.png') center 25% / cover no-repeat,
       var(--ink);
     color:var(--paper);
     overflow:hidden;
@@ -153,7 +153,7 @@
   .arch-photo{
     position:absolute; inset:-6%;
     background:
-      url('assets/images/hero-photo.jpeg') center 22% / cover no-repeat,
+      url('../assets/images/praisephoto.png') center 22% / cover no-repeat,
       linear-gradient(160deg, #2A3B63, #1E2A47);
     animation:kenburns 18s ease-in-out infinite alternate;
     z-index:0;
