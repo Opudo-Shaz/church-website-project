@@ -529,3 +529,92 @@
     html{scroll-behavior:auto;}
     *{transition:none !important;}
   }
+/* Featured Teaching Series */
+.sermons-section {
+  padding: 4rem 1.5rem;
+}
+
+.series-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.series-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.series-badge {
+  display: inline-block;
+  align-self: flex-start;
+  background-color: #fef3c7;
+  color: #92400e;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.series-speaker {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 0.75rem;
+}
+
+.series-text {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* YouTube CTA Banner */
+.youtube-channel-banner {
+  margin-top: 3rem;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.youtube-channel-banner h3 {
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.youtube-channel-banner p {
+  color: #94a3b8;
+  margin: 0;
+}
+
+.btn-yt {
+  background-color: #ff0000;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-yt:hover {
+  background-color: #cc0000;
+  color: #ffffff;
+}
