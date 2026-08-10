@@ -502,6 +502,43 @@
     font-size:0.85rem; color:rgba(251,248,242,0.7);
     margin-bottom:22px;
   }
+  .paypal-card{
+    max-width:700px;
+    margin:0 auto 20px;
+    padding:18px 22px;
+    border-radius:14px;
+    border:1px solid rgba(251,248,242,0.25);
+    background:rgba(251,248,242,0.08);
+  }
+  .paypal-label{
+    display:block;
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:0.07em;
+    color:rgba(251,248,242,0.75);
+    font-weight:600;
+    margin-bottom:6px;
+  }
+  .paypal-email{
+    display:block;
+    font-family:'Fraunces',serif;
+    font-size:1.2rem;
+    color:var(--paper);
+    margin-bottom:14px;
+  }
+  .paypal-actions{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .paypal-btn{
+    background:#ffc439;
+    color:#111827;
+  }
+  .paypal-btn:hover{
+    background:#f3b934;
+  }
   .give .btn-ghost{border-color:rgba(251,248,242,0.5);}
   .give .btn-ghost:hover{border-color:var(--paper);}
 
